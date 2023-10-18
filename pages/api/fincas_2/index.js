@@ -1,0 +1,40 @@
+import { firestore, auth } from '/firebase/admin';
+
+const ADMIN_UID = 'WI7DK1KHBPNwg8qIwEnR8DTcgA92'; // process.env.ADMIN_UID
+
+export default async function handler(req, res) {
+  const authHeader = req.headers.authorization || '';
+  const token = authHeader.startsWith('Bearer ') ? authHeader.split('Bearer ')[1] : null;
+  const decodedToken = await auth.verifyIdToken(token).catch(() => null);
+  const user = decodedToken ? decodedToken.uid : null;
+  const clientId = req.query.clientId;
+
+  if (![ADMIN_UID, clientId].includes(user)) { // process.env.ADMIN_UID
+    return res.status(401).json({ error: 'Unauthorized: Invalid token' });
+  }
+
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  try {
+    const payload = req.body || {};
+    console.log("Create finca payload:", payload);
+    // simple validation; require a name field
+    if (!payload.name) {
+      return res.status(400).json({ error: "Missing required field: name" });
+    }
+
+    const docRef = await firestore.collection("fincas").add({
+      ...payload,
+      createdAt: new Date().getTime(),
+    });
+
+    const docSnap = await docRef.get();
+    return res.status(201).json({ id: docRef.id, ...docSnap.data() });
+  } catch (err) {
+    console.error("Create finca error:", err);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+}

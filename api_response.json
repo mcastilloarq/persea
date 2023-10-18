@@ -1,0 +1,55 @@
+{
+  "id_finca":1,
+  "id_cliente":1,
+  "nombre":"Olivares",
+  "descripcion":"Finca en río seco bajo, producción aguacate, mangos y chirimoya",
+  "latitud":36.756234,
+  "longitud":-3.692590,
+  "población":"Almuñécar",
+  "provincia":"Granada",
+  "estaciones":[
+    {
+      "id_estacion":1,
+      "nombre":"Estación 1",
+      "descripcion":"Estación en zona de aguacates",
+      "latitud":36.756500,
+      "longitud":-3.692800,
+      "dispositivos":[
+        {
+          "id_sensor":2,
+          "tipo":"Analógico",
+          "param1":"Humedad %",
+          "param2":"0",
+          "param3":"0",
+          "nombre":"Teros 10",
+          "lastRecord": {
+            "id_registro": 101,
+            "estacionId": 1,
+            "sensorId": 2,
+            "timestamp": "2024-06-01T12:00:00Z",
+            "valor1": 45.3,
+            "valor2": 0,
+            "valor3": 0
+          }
+        },
+        {
+          "id_sensor":4,
+          "tipo":"Analógico",
+          "param1":"Nivel %",
+          "param2":"0",
+          "param3":"0",
+          "nombre":"Batería",
+          "lastRecord": {
+            "id_registro": 102,
+            "estacionId": 1,
+            "sensorId": 4,
+            "timestamp": "2024-06-01T12:00:00Z",
+            "valor1": 0,
+            "valor2": 0,
+            "valor3": 0
+          }
+        }
+      ]
+      }
+  ]
+}
