@@ -1,5 +1,3 @@
-
-
 export default function Home() {
   const makeCall = () => {
     fetch('/api/test', {
