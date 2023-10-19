@@ -2,7 +2,7 @@
 
 export default function Home() {
   const makeCall = () => {
-    fetch('http://localhost:3000/api/hola', {
+    fetch('/api/test', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

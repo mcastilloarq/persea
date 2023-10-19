@@ -1,8 +1,6 @@
 const get = async (req, res) => {
   const { query } = req;
-  const { key } = query;
   console.log('query', query)
-  console.log('key', key)
   return res.status(200).json({})
 }
 
