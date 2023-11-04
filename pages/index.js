@@ -20,12 +20,14 @@ export default function Index() {
                 Aquí viene un pequeño resumen de lo que ofrece Persea.
               </p>
               <div className="mt-12">
-                <a
-                  href="/auth/login"
-                  className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-400 active:bg-blueGray-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                >
-                  Inicia sesión
-                </a>
+                <Link legacyBehavior href="/auth/login">
+                  <a
+                    href="#"
+                    className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-400 active:bg-blueGray-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                  >
+                    Inicia sesión
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -20,12 +20,14 @@ export default function Navbar(props) {
               </a>
             </Link>
             <li className="flex items-center">
-              <a
-                href="/auth/login"
-                className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              >
-                  <i className="fas fa-fingerprint"></i>
-              </a>
+              <Link legacyBehavior href="/auth/login">
+                <a
+                  href="#"
+                  className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                >
+                    <i className="fas fa-fingerprint"></i>
+                </a>
+              </Link>
             </li>
           </div>
           <div
