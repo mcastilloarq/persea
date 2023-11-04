@@ -30,7 +30,7 @@ export default class MyApp extends App {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           <title>PERSEA</title>
-          {/* <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> */}
+          <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE" async ></script>
         </Head>
         <ToastProvider>
           <Layout>
